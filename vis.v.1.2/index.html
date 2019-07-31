@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script src="https://d3js.org/d3-time.v1.min.js"></script>
+<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+<script src="script.js"></script>
+<script src="ac/auto-complete.js"></script>
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+<link rel="stylesheet" href="ac/auto-complete.css">
+<body>
+	<form 
+		onsubmit="return false;" 
+		class="pure-form" 
+		style="border-top: 1px solid #eee;border-bottom:1px solid #eee;background:#fafafa;margin:30px 0;padding:20px 10px;text-align:center"
+		>
+        <input 
+        	id="companyName" 
+        	autofocus 
+        	type="text" 
+        	name="q" 
+        	placeholder="Bio Tech Company Name" 
+        	style="width:100%;max-width:600px;outline:0"
+        	/>
+        <input 
+        	type="button" 
+        	name="submit" 
+        	id="btn_id" 
+        	value="Search" 
+        	onclick="intNetwork()"
+        	/>
+    </form>
+    <script type="text/javascript">
+	    var demo1 = new autoComplete({
+	        selector: '#companyName',
+	        minChars: 1,
+	        source: function(term, suggest){
+	            term = term.toLowerCase();
+	            var choices = ['galt', 'kmph', 'cala', 'uthr', 'cbay', 'lgnd', 'vktx', 'pulm', 'pdli', 'asrt', 'jnj', 'tbph', 'cprx', 'exel', 'vrtx', 'hsgx', 'aldr', 'anip', 'zts', 'infi', 'enta', 'arna', 'syrs', 'prgo', 'anik', 'adms', 'sbph', 'nktr', 'incy', 'mnkd', 'fprx', 'biib', 'mnta', 'amrx', 'mrna', 'eltp', 'eols', 'tlry', 'supn', 'pfe', 'asmb', 'natr', 'agn', 'ntec', 'agio', 'cris', 'pgnx', 'gild', 'espr', 'gemp', 'mgnx', 'aols', 'lly', 'anab', 'alks', 'rexn', 'cnat', 'ngm', 'acor', 'acur', 'pbh', 'ebs', 'ziop', 'coll', 'celg', 'bmy', 'cbpo', 'mrk', 'arry', 'snss', 'abus', 'alny', 'sgen', 'mdco', 'regn', 'elan', 'endp', 'sppi', 'mtex', 'rarx', 'myl', 'mrus', 'arql', 'rcus', 'ions', 'prnb', 'cara', 'tcon', 'apvo', 'amgn', 'agen', 'abbv', 'irwd', 'mnk', 'glmd', 'adro'];
+	            var suggestions = [];
+	            for (i=0;i<choices.length;i++)
+	                if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+	            suggest(suggestions);
+	        }
+	    });
+    </script>
+	<div class="directed"></div>
+</body>
+</html>
